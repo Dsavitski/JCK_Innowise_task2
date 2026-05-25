@@ -3,7 +3,7 @@ package com.savitskiy.task2.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class TextComposite extends AbstractTextComponent {
+public class TextComposite extends AbstractTextComponent {
     private final List<CustomTextComponent> components = new ArrayList<>();
     private static final String Str = "\n";
     private static final String Tab = "    ";
