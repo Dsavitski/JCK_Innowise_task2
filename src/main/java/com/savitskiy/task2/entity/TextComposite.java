@@ -3,7 +3,7 @@ package com.savitskiy.task2.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextComposite extends AbstractTextComponent {
+public abstract class TextComposite extends AbstractTextComponent {
     private final List<CustomTextComponent> components = new ArrayList<>();
     private static final String Str = "\n";
     private static final String Tab = "    ";
@@ -45,22 +45,22 @@ public class TextComposite extends AbstractTextComponent {
     }
 
     @Override
-    public void add(TextComponent component) {
+    public void add(CustomTextComponent component) {
         components.add(component);
     }
 
     @Override
-    public void remove(TextComponent component) {
+    public void remove(CustomTextComponent component) {
         components.remove(component);
     }
 
     @Override
     public int countLetters() {
-        return components.stream().mapToInt(TextComponent::countLetters).sum();
+        return components.stream().mapToInt(CustomTextComponent::countLetters).sum();
     }
 
     @Override
     public int countSymbols() {
-        return components.stream().mapToInt(TextComponent::countSymbols).sum();
+        return components.stream().mapToInt(CustomTextComponent::countSymbols).sum();
     }
 }
